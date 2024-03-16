@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+type HelloFunc func(string)
+
 func main() {
 	fn1()
 	fn2("Hello, Go2")
@@ -16,7 +18,11 @@ func main() {
 	fmt.Printf("%d, %d => %d, %d \n", num1, num2, num3, num4)
 
 	num5, num6, title := swapV2(num1, num2)
-	fmt.Printf("%s %d, %d => %d, %d", title, num1, num2, num5, num6)
+	fmt.Printf("%s %d, %d => %d, %d \n", title, num1, num2, num5, num6)
+
+	var helloFunc HelloFunc
+	helloFunc = sayHello
+	helloFunc("world")
 }
 
 func fn1() {
@@ -43,4 +49,8 @@ func swapV2(a, b int) (x, y int, title string) {
 	x, y = b, a
 	title = "SwapV2"
 	return
+}
+
+func sayHello(msg string) {
+	fmt.Printf("Hello, %s!\n", msg)
 }
