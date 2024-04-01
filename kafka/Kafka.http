@@ -1,0 +1,5 @@
+@URL = http://localhost:1323
+
+// Producer
+GET {{URL}}/says/HI-1
+Content-Type: application/json
