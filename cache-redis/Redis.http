@@ -1,0 +1,11 @@
+@URL = http://localhost:1323
+
+// Get Count
+GET {{URL}}/counts
+Content-Type: application/json
+
+###
+
+// Increase Count
+POST {{URL}}/counts
+Content-Type: application/json
